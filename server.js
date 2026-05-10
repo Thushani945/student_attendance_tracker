@@ -1,28 +1,14 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-
-const studentRoutes = require('./routes/studentRoutes');
-const attendanceRoutes = require('./routes/attendanceRoutes');
 
 dotenv.config();
 
 const app = express();
-app.use(express.json());
-
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('MongoDB Connected'))
-  .catch((err) => console.log('DB Connection Error:', err));
-
-
-app.use('/api/students', studentRoutes);
-app.use('/api/attendance', attendanceRoutes);
 
 
 app.get('/', (req, res) => {
-  res.json({ message: 'Student Attendance Tracker API is running' });
+  res.json({ message: 'Attendance Tracker API is running' });
 });
-
 
 app.use((req, res) => {
   res.status(404).json({ message: 'Route not found' });
