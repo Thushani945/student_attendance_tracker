@@ -12,7 +12,7 @@ const createStudent = async (req, res) => {
 };
 
 
-const getAllStudents =  (req, res) => {
+const getAllStudents = async (req, res) => {
   try {
     const students = await Student.find();
     res.status(200).json({ message: 'Students fetched successfully', count: students.length, data: students });

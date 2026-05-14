@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const studentRoutes = require('./routes/studentRoutes');
-
+const attendanceRoutes = require('./routes/attendanceRoutes');
 dotenv.config();
 
 const app = express();
@@ -13,6 +13,7 @@ mongoose.connect(process.env.MONGO_URI)
   .catch((err) => console.log('DB Connection Error:', err));
 
   app.use('/api/students', studentRoutes);
+  app.use('/api/attendance', attendanceRoutes);
 
 app.get('/', (req, res) => {
   res.json({ message: 'Attendance Tracker API is running' });
