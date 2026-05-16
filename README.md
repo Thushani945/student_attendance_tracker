@@ -173,9 +173,9 @@ DELETE /api/attendance/:id
 ## Student Example
 
 {
-  "name": "John Doe",
-  "studentId": "ST001",
-  "email": "john@example.com",
+  "name": "Thushani Kithulgoda",
+  "studentId": "2022/ICT/88",
+  "email": "thush123@gmail.com",
   "course": "IT",
   "year": 2
 }
@@ -188,7 +188,7 @@ DELETE /api/attendance/:id
   "student": "STUDENT_OBJECT_ID",
   "date": "2026-05-16",
   "status": "present",
-  "subject": "Maths",
+  "subject": "Web Services",
   "remarks": "On time"
 }
 
